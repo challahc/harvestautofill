@@ -13,7 +13,7 @@ __author__ = 'mkelly'
 import harvest
 import random
 
-DEBUG=True
+DEBUG=False
 
 Tasks = {
     'Architecture':'1842336',
@@ -75,7 +75,7 @@ DocumentationRange=random.randint(0, 2)
 DocumentationTime=ValidTimeEntries[DocumentationRange]
 AvailableTime=AvailableTime-DocumentationTime
 data = {"project_id":"3339844","hours":str(DocumentationTime), "task_id": Tasks['Documentation']}
-if DEBUG is False:
+if DEBUG is False and DocumentationTime > 0:
     success=mytime.add(data)
     if success is None:
         print "Error Adding data to Harvest"
@@ -88,7 +88,7 @@ ArchitectureRange=random.randint(1, 3)
 ArchitectureTime=ValidTimeEntries[ArchitectureRange]
 AvailableTime=AvailableTime-ArchitectureTime
 data = {"project_id":"3339844","hours":str(ArchitectureTime), "task_id": Tasks['Architecture']}
-if DEBUG is False:
+if DEBUG is False and ArchitectureTime > 0:
     success=mytime.add(data)
     if success is None:
         print "Error Adding data to Harvest"
@@ -101,7 +101,7 @@ PlanningRange=random.randint(2, 6)
 PlanningTime=ValidTimeEntries[PlanningRange]
 AvailableTime=AvailableTime-PlanningTime
 data = {"project_id":"3339844","hours":str(PlanningTime), "task_id": Tasks['Planning']}
-if DEBUG is False:
+if DEBUG is False and PlanningTime > 0:
     success=mytime.add(data)
     if success is None:
         print "Error Adding data to Harvest"
@@ -114,7 +114,7 @@ StrategyRange=random.randint(1, 4)
 StrategyTime=ValidTimeEntries[StrategyRange]
 AvailableTime=AvailableTime-StrategyTime
 data = {"project_id":"3339844","hours":str(StrategyTime), "task_id": Tasks['Strategy']}
-if DEBUG is False:
+if DEBUG is False and StrategyTime > 0:
     success=mytime.add(data)
     if success is None:
         print "Error Adding data to Harvest"
@@ -130,7 +130,7 @@ if AvailableTime>0:
         ResearchTime=AvailableTime
     AvailableTime=AvailableTime-ResearchTime
     data = {"project_id":"3339844","hours":str(ResearchTime), "task_id": Tasks['Research']}
-    if DEBUG is False:
+    if DEBUG is False and ResearchTime > 0:
        success=mytime.add(data)
        if success is None:
         print "Error Adding data to Harvest"
@@ -147,7 +147,7 @@ if AvailableTime>0:
     AvailableTime=AvailableTime-VendorManagementTime
 
     data = {"project_id":"3339844","hours":str(VendorManagementTime), "task_id": Tasks['Vendor Management']}
-    if DEBUG is False:
+    if DEBUG is False and VendorManagementTime > 0:
         success=mytime.add(data)
         if success is None:
             print "Error Adding data to Harvest"
@@ -158,7 +158,7 @@ if AvailableTime>0:
 if AvailableTime>0:
     #Let's add left over time to Architecture for the day
     data = {"project_id":"3339844","hours":str(AvailableTime), "task_id": Tasks['Architecture']}
-    if DEBUG is False:
+    if DEBUG is False and AvailableTime > 0:
         success=mytime.add(data)
         if success is None:
             print "Error Adding data to Harvest"
