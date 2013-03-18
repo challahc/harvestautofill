@@ -30,8 +30,8 @@ ProjectID = '3339844'
 
 MaxHoursPerDay=8
 HarvestURL="https://scrippsnetworksdigital.harvestapp.com"
-HarvestEmail="mark.kelly@scrippsnetworks.com"
-HarvestPassword="mek26811"
+HarvestEmail="email@scrippsnetworks.com"
+HarvestPassword="password"
 
 ValidTimeEntries = [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]
 
