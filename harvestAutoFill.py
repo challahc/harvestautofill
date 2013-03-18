@@ -30,7 +30,7 @@ ProjectID = '3339844'
 
 MaxHoursPerDay=8
 HarvestURL="https://scrippsnetworksdigital.harvestapp.com"
-HarvestEmail="email@scrippsnetworks.com"
+HarvestEmail="scrippsemail@scrippsnetworks.com"
 HarvestPassword="password"
 
 ValidTimeEntries = [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]
@@ -164,4 +164,5 @@ if AvailableTime>0:
             print "Error Adding data to Harvest"
         print success
     print data
-print AvailableTime
+if DEBUG is True:
+    print AvailableTime
